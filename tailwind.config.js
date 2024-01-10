@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'footer': '#764701',
+        'bg-footer': '#fb1'
+      }
+    },
   },
   plugins: [],
 }
