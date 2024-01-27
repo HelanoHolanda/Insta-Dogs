@@ -1,0 +1,62 @@
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
+import H1 from '../../Components/H1';
+import Input from '../../Components/Input';
+import Label from '../../Components/Label';
+import  Button  from '../../Components/Button';
+import {useForm} from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+const Login = () => {
+
+  const schema = yup.object({
+    username: yup.string().required("Usúario é Obrigatorio!"),
+    password: yup.string().required("Senha é Obrigatoria!"),
+  })
+  
+  const {
+    register,
+    handleSubmit,
+    // eslint-disable-next-line no-unused-vars
+    formState: { errors },
+  } = useForm({resolver: yupResolver(schema),})
+
+  const onSubmit = (data) => console.log(data)
+
+  return (
+    <div>
+       <Header />       
+        <div className='flex-1'>
+           <div className='md:grid grid-cols-2 gap-8 before:block before:bg-auth before:bg-cover before:bg-center'>        
+            <div className='max-w-md p-4 mt-48'>
+                <form onSubmit={handleSubmit(onSubmit)} className='mb-8'>
+                  <div>
+                    <H1>Login</H1>
+                    <Label>Usuário </Label>
+                    <Input {...register("username")}/>
+                    <p className='text-red-600 block'>{errors.username?.message}</p>
+                    <Label>Senha </Label>
+                    <Input type="password" 
+                    {...register("password")}/>
+                    <p className='text-red-600'>{errors.password?.message}</p>
+                    <Button type="submit">Entrar </Button>
+                    </div>
+                </form>
+                <p className='inline-block text-gray-600 py-2	leading-none'>Perdeu a Senha?</p>
+                <div className='my-16'>
+                  <h2 className='text-3xl font-serif leading-none '>Cadastre-se</h2>
+                  <p className='my-8'>Ainda não possui conta? Cadastre-se no site.</p>
+                  <Button>Cadastro</Button>
+                </div>
+            </div>
+            </div> 
+        </div>
+       <Footer /> 
+    </div>
+  )
+}
+
+export default Login

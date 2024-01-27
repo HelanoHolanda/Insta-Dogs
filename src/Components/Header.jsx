@@ -8,7 +8,7 @@ const Header = () => {
 
 
   return (
-    <div className='w-full bg-white fixed mx-auto border-b-2 shadow-sm '>
+    <div className='w-full bg-white  mx-auto border-b-2 shadow-sm '>
         <div className='flex justify-around items-center h-16'>
             <img src={Logo} alt="" />
             <div className='flex items-center gap-2'>
@@ -22,3 +22,5 @@ const Header = () => {
 }
 
 export default Header
+
+

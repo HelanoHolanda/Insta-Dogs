@@ -2,6 +2,8 @@
 import React from 'react'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+import Home from './Containers/Home/Home'
+
 
 
 
@@ -9,9 +11,7 @@ const App = () => {
   return (
     <> 
     <Header />
-    <div className='h-40'>
-      
-    </div>
+    <Home />
     <Footer />
     </>
   )
