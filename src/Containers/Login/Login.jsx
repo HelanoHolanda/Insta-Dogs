@@ -9,6 +9,7 @@ import  Button  from '../../Components/Button';
 import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import { Link, NavLink } from 'react-router-dom';
 
 const Login = () => {
 
@@ -45,11 +46,11 @@ const Login = () => {
                     <Button type="submit">Entrar </Button>
                     </div>
                 </form>
-                <p className='inline-block text-gray-600 py-2	leading-none'>Perdeu a Senha?</p>
+                <Link to="/lostpassword"> <p className='inline-block text-gray-600 py-2	leading-none'>Perdeu a Senha?</p> </Link>
                 <div className='my-16'>
                   <h2 className='text-3xl font-serif leading-none '>Cadastre-se</h2>
                   <p className='my-8'>Ainda não possui conta? Cadastre-se no site.</p>
-                  <Button>Cadastro</Button>
+                 <NavLink  to="/register" > <Button>Cadastro</Button> </NavLink>
                 </div>
             </div>
             </div> 

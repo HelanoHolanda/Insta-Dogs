@@ -48,7 +48,7 @@ const Register = () => {
                     <Input type="password" 
                     {...register("password")}/>
                     <p className='text-red-600'>{errors.password?.message}</p>
-                    <Button type="submit">Entrar </Button>
+                    <Button type="submit">Cadastrar </Button>
                     </div>
                 </form>
             </div>
