@@ -10,9 +10,9 @@ const Input =  React.forwardRef(({...props }, ref) => {
       type="text"
       ref={ref}
       {...props}
-      className='block
-    md:max-w-full
-     w-full   
+      className='
+      block
+      w-full  
      p-3 
      mb-2
      rounded-lg
