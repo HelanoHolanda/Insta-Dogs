@@ -16,8 +16,8 @@ import { useUser } from '../../hooks/UserContext';
 
 const Login = () => {
 
-  const {putUserData, user} = useUser()
-  console.log(user)
+  const {putUserData} = useUser()
+  
 
   const schema = yup.object({
     username: yup.string().required("Usúario é Obrigatorio!"),

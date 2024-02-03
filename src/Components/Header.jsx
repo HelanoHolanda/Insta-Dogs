@@ -20,16 +20,18 @@ const Header = () => {
 
 
             <div  className='flex items-center gap-2'>
-              {user ?
-               (
-              <Link className='flex gap-2' to="/login"> <p className='font-sans'> {user.user_display_name} </p>           
+              {user.user_display_name ?
+               
+              <Link className='flex gap-2' to="/login">
+                <p className='font-sans'> {user.user_display_name} </p>           
                 <img src="https://dogs.origamid.dev/assets/usuario-106ce8c2.svg" alt="" />
               </Link> 
-              ) : (
-                <Link to="/login"> <p className='font-sans'> Login / Criar </p>           
+               : 
+                <Link className='flex gap-2' to="/login"> 
+                <p className='font-sans'> Login / Criar </p>           
                 <img src="https://dogs.origamid.dev/assets/usuario-106ce8c2.svg" alt="" />
               </Link> 
-              )
+              
               }
             </div>
         </div>
