@@ -1,20 +1,36 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from '../Public/Logo.svg'
 import { Link } from 'react-router-dom'
+import { useUser } from '../hooks/UserContext'
 
 
 const Header = () => {
+
+    const {user} = useUser()
+    console.log(user)
+
 
   return (
     <div className='w-full bg-white  mx-auto border-b-2 shadow-sm '>
         <div className='flex justify-around items-center h-16'>
         <Link to="/">
             <img    src={Logo} alt="" />
-            </Link>
+        </Link>
+
+
             <div  className='flex items-center gap-2'>
-              <Link to="/login"> <p className='font-sans'>Login / Criar </p> </Link>           
+              {user ?
+               (
+              <Link className='flex gap-2' to="/login"> <p className='font-sans'> {user.user_display_name} </p>           
                 <img src="https://dogs.origamid.dev/assets/usuario-106ce8c2.svg" alt="" />
+              </Link> 
+              ) : (
+                <Link to="/login"> <p className='font-sans'> Login / Criar </p>           
+                <img src="https://dogs.origamid.dev/assets/usuario-106ce8c2.svg" alt="" />
+              </Link> 
+              )
+              }
             </div>
         </div>
 

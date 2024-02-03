@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import H1 from '../../Components/H1';
@@ -10,8 +10,14 @@ import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { Link, NavLink } from 'react-router-dom';
+import apiDogs from '../../Services/Api';
+import { useUser } from '../../hooks/UserContext';
+
 
 const Login = () => {
+
+  const {putUserData, user} = useUser()
+  console.log(user)
 
   const schema = yup.object({
     username: yup.string().required("Usúario é Obrigatorio!"),
@@ -25,7 +31,16 @@ const Login = () => {
     formState: { errors },
   } = useForm({resolver: yupResolver(schema),})
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async ClientData => {
+      const {data} = await apiDogs.post('/jwt-auth/v1/token',{
+        username: ClientData.username,
+        password: ClientData.password
+      })
+      putUserData(data)
+      
+     
+  } 
+  
 
   return (
     <div>

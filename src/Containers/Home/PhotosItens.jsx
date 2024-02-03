@@ -1,6 +1,7 @@
 import axios from 'axios'
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
-
+import apiDogs from '../../Services/Api'
 
 
 
@@ -11,17 +12,24 @@ const PhotosItens = () => {
     // chamando a api
     useEffect (() => {
       async function feed (){
-       let {data: response} = await axios.get("https://dogsapi.origamid.dev/json/api/photo")
+       let {data: response} = await apiDogs.get("https://dogsapi.origamid.dev/json/api/photo")
        setPhotoItens(response)
        console.log(response)
       }
     feed()
     },[])
 
-   
-   
 
-  return (
+    useEffect (() => {
+      async function api (){
+       let {data: response} = await axios.get("https://dogsapi.origamid.dev/json")
+      
+       console.log(response)
+      }
+    api()
+    },[])
+   
+   return (
      <div className='box-border'>
       <ul className='grid grid-cols-2 gap-4 mb-4 items-center'>
         {photosItens.map((photo) => (
