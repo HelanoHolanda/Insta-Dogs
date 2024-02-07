@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import H1 from '../../Components/H1';
@@ -15,7 +15,8 @@ import { useUser } from '../../hooks/UserContext';
 
 
 const Login = () => {
-
+  const [load, setLoad] = useState(false)
+  const [error, setError] = useState('')
   const {putUserData} = useUser()
   const navigate = useNavigate();
 
@@ -32,14 +33,22 @@ const Login = () => {
   } = useForm({resolver: yupResolver(schema),})
 
   const onSubmit = async ClientData => {
+    try{
+      setLoad(true)
       const {data} = await apiDogs.post('/jwt-auth/v1/token',{
         username: ClientData.username,
         password: ClientData.password
       })
       putUserData(data)
+      setLoad(false)
       navigate('/userpage') 
+    }
+    catch (error){
+      console.log(error)
+     setError(error) 
+     setLoad(false)     
   } 
-  
+}
 
   return (
     <div>
@@ -57,7 +66,8 @@ const Login = () => {
                     <Input type="password" 
                     {...register("password")}/>
                     <p className='text-red-600'>{errors.password?.message}</p>
-                    <Button type="submit">Entrar </Button>
+                    <p className='text-red-600'>{error && "Usuário Inválido!"}</p>
+                    <Button type="submit"> {load ? "Carregando..." : "Entrar"} </Button>
                     </div>
                 </form>
                 <Link to="/lostpassword"> <p className='inline-block text-gray-600 py-2	leading-none'>Perdeu a Senha?</p> </Link>
