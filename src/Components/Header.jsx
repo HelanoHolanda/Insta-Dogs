@@ -8,7 +8,7 @@ import { useUser } from '../hooks/UserContext'
 const Header = () => {
 
     const {user} = useUser()
-    console.log(user)
+    
 
 
   return (

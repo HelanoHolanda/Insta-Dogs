@@ -20,14 +20,7 @@ const PhotosItens = () => {
     },[])
 
 
-    useEffect (() => {
-      async function api (){
-       let {data: response} = await axios.get("https://dogsapi.origamid.dev/json")
-      
-       console.log(response)
-      }
-    api()
-    },[])
+    
    
    return (
      <div className='box-border'>

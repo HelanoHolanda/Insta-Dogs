@@ -9,7 +9,7 @@ import  Button  from '../../Components/Button';
 import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import apiDogs from '../../Services/Api';
 import { useUser } from '../../hooks/UserContext';
 
@@ -17,7 +17,7 @@ import { useUser } from '../../hooks/UserContext';
 const Login = () => {
 
   const {putUserData} = useUser()
-  
+  const navigate = useNavigate();
 
   const schema = yup.object({
     username: yup.string().required("Usúario é Obrigatorio!"),
@@ -37,8 +37,7 @@ const Login = () => {
         password: ClientData.password
       })
       putUserData(data)
-      
-     
+      navigate('/userpage') 
   } 
   
 

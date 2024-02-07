@@ -6,13 +6,15 @@ const UserContext = createContext()
 // eslint-disable-next-line react/prop-types
 export const UserProvider = ({children}) => {
  
-    const [user, setUser] = useState({})
-
+    const [user, setUser] = useState({}) // estados dos usuarios
+ 
+    // funcao que recebe e seta os dados no localStorage
    const putUserData = async infoUser =>  {
          setUser(infoUser)
          await localStorage.setItem('apiDogs',JSON.stringify(infoUser))
     }
 
+    // funcao que pega os dados no localStorage
     useEffect(() => {
         const LoadUserData = async () => {
             const infoUser = await localStorage.getItem('apiDogs')

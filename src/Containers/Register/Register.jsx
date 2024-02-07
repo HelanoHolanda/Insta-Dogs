@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Header from '../../Components/Header'
 import H1 from '../../Components/H1'
 import Label from '../../Components/Label'
@@ -10,11 +10,14 @@ import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import apiDogs from '../../Services/Api'
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
      
-    
+    const navigate = useNavigate()
+    const [error, setError] = useState('')
+    const [load, setload] = useState(false)
 
     const schema = yup.object({
         username: yup.string().required("Usúario é Obrigatorio!"),
@@ -30,12 +33,22 @@ const Register = () => {
       } = useForm({resolver: yupResolver(schema),})
     
       const onSubmit = async ClientData => {
+        try{ 
+          setload(true)
         const response = await apiDogs.post('/api/user',{
           username: ClientData.username,
           email: ClientData.email,
           password: ClientData.password
         })
         console.log(response)
+        navigate('/userpage')
+        setload(false)
+        }
+        catch(error){
+           setError(error.response.data.message)
+        }
+        
+        
         
     } 
 
@@ -61,8 +74,9 @@ const Register = () => {
                     <Input type="password" 
                     {...register("password")}/>
                     <p className='text-red-600'>{errors.password?.message}</p>
-                    <Button type="submit">Cadastrar </Button>
+                    <Button type="submit">{load ? "Carregando..." : "Cadastrar"} </Button>
                     </div>
+                    <p className='text-red-600 block mt-6'>{error}</p>
                 </form>
             </div>
             </div> 

@@ -5,6 +5,7 @@ import Home from '../Containers/Home/Home'
 import Login from "../Containers/Login/Login"
 import Register from '../Containers/Register/Register'
 import LostPassword from '../Containers/LostPassword/LostPassword'
+import UserPage from '../Containers/Userpage/UserPage'
 
 
 const Routes1 = () => {
@@ -15,6 +16,7 @@ const Routes1 = () => {
      <Route  path="/login" element={<Login />}/>
      <Route  path="/register" element={<Register />}/>
      <Route  path="/lostpassword" element={<LostPassword />}/>
+     <Route  path="/userpage" element={<UserPage />} />
     </Routes>   
   )
 }
