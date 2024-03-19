@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react'
-import Header from '../../Components/Header'
+
 import H1 from '../../Components/H1'
 import Label from '../../Components/Label'
 import Input from '../../Components/Input'
 import Button from '../../Components/Button'
-import Footer from '../../Components/Footer'
+
 import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -41,11 +41,12 @@ const Register = () => {
           password: ClientData.password
         })
         console.log(response)
-        navigate('/userpage')
+        navigate('/user')
         setload(false)
         }
         catch(error){
            setError(error.response.data.message)
+           setload(false)
         }
         
         
@@ -56,7 +57,7 @@ const Register = () => {
 
     return (
      <div>
-         <Header />       
+               
         <div className='flex-1'>
             <div className=''>
            <div className='min-h-screen md:grid grid-cols-2 gap-8 before:block before:bg-auth before:bg-cover before:bg-center'>        
@@ -82,7 +83,7 @@ const Register = () => {
             </div> 
             </div>
         </div>
-       <Footer /> 
+        
     </div>
 
   )

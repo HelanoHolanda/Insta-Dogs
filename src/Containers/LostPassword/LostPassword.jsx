@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../../Components/Header'
-import Footer from '../../Components/Footer'
 import H1 from '../../Components/H1'
 import Label from '../../Components/Label'
 import Input from '../../Components/Input'
@@ -11,7 +9,7 @@ const LostPassword = () => {
 
   return (
     <>
-    <Header />
+    
     <div className='flex-1'>
     <div className=''>
    <div className='min-h-screen md:grid grid-cols-2 gap-8 before:block before:bg-auth before:bg-cover before:bg-center'>        
@@ -26,7 +24,7 @@ const LostPassword = () => {
     </div> 
     </div>
 </div>
-<Footer /> 
+ 
 </>
   )
 }

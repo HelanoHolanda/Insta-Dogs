@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react'
-import Header from '../../Components/Header'
-import Footer from '../../Components/Footer'
 import H1 from '../../Components/H1';
 import Input from '../../Components/Input';
 import Label from '../../Components/Label';
@@ -41,7 +39,7 @@ const Login = () => {
       })
       putUserData(data)
       setLoad(false)
-      navigate('/userpage') 
+      navigate('/user') 
     }
     catch (error){
       console.log(error)
@@ -52,7 +50,7 @@ const Login = () => {
 
   return (
     <div>
-       <Header />       
+             
         <div className='flex-1'>
            <div className='md:grid grid-cols-2 gap-8 before:block before:bg-auth before:bg-cover before:bg-center'>        
             <div className='max-w-md p-4 mt-48'>
@@ -79,7 +77,7 @@ const Login = () => {
             </div>
             </div> 
         </div>
-       <Footer /> 
+       
     </div>
   )
 }
