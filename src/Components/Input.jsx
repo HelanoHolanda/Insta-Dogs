@@ -1,16 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-
+import React from "react";
 
 // eslint-disable-next-line react/display-name
-const Input =  React.forwardRef(({...props }, ref) => {
-
+const Input = React.forwardRef(({ ...props }, ref) => {
   return (
     <input
       type="text"
       ref={ref}
       {...props}
-      className='
+      className="
       block
       w-full  
      p-3 
@@ -30,11 +28,9 @@ const Input =  React.forwardRef(({...props }, ref) => {
         hover:shadow-yellow-300
         focus:shadow-yellow-100
         focus:outline-none
-        focus:outline-none focus:yellow-200' // Spread the remaining props
+        focus:outline-none focus:yellow-200" // Spread the remaining props
     />
   );
 });
 
-
-
-export default Input
+export default Input;

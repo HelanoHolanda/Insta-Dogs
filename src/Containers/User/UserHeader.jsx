@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import H1 from "../../Components/H1";
 import UserHeaderNav from "./UserHeaderNav";
@@ -22,9 +23,9 @@ const UserHeader = () => {
   }, [location]);
 
   return (
-    <header className="grid grid-cols-2 items-center mb-8 mt-4 relative">
-      <H1 className="col-span-1">{title}</H1>
-      <UserHeaderNav className="col-auto" />
+    <header className="grid grid-cols-twocolumns items-center mb-8 mt-4 relative">
+      <H1>{title}</H1>
+      <UserHeaderNav />
     </header>
   );
 };
