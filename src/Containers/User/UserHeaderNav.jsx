@@ -7,7 +7,7 @@ import UseMedia from "../../hooks/UseMedia";
 const UserHeaderNav = () => {
   const { logout } = useUser();
   const mobile = UseMedia("(max-width: 40rem)");
-  console.log(mobile);
+
   const [mobileisopen, setMobileisopen] = useState(false);
 
   const { pathname } = useLocation();

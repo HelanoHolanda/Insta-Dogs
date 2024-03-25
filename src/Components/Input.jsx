@@ -16,7 +16,7 @@ const Input = React.forwardRef(({ ...props }, ref) => {
      rounded-lg
      text-base
      outline-none
-     bg-gray-100
+     bg-gray-200
       border-solid
        border-2
        border-gray-100

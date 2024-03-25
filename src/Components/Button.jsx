@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React from "react";
 
 // eslint-disable-next-line react/prop-types
-export const Button = ({children}) => {
+export const Button = ({ children }) => {
   return (
-    <button  className='
+    <button
+      className="
+    block
     text-base
      cursor-pointer 
      border-0 
@@ -20,9 +22,10 @@ export const Button = ({children}) => {
        hover:opacity-75
        hover:border-yellow-200
        hover:shadow-sm
-       hover:shadow-yellow-300'>
-     {children}
+       hover:shadow-yellow-300"
+    >
+      {children}
     </button>
-  )
-}
-export default Button ;
+  );
+};
+export default Button;

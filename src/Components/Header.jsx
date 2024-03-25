@@ -6,7 +6,7 @@ import { useUser } from "../hooks/UserContext";
 
 const Header = () => {
   const { user } = useUser();
-  console.log(user);
+
   return (
     <div className="w-full bg-white border-b-2 shadow-sm block">
       <div className="flex justify-between items-center h-16 max-w-3xl mx-auto px-4">
