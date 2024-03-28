@@ -29,15 +29,27 @@ export default {
       },
       backgroundImage: {
         auth: "url('/src/public/login.jpg')",
+        view: "url('/src/public/visualizacao.svg')",
+        viewBlack: "url('/src/public/visualizacao-black.svg')",
       },
       gridArea: {
         custom: "1 / 1 / span 2 / 3",
+      },
+      gridTemplateRows: {
+        row: " auto 1fr auto",
+        img: "1 / 4",
+      },
+      maxHeight: {
+        "max-sm": "max-height: calc(100vh - 4rem);",
       },
       rotate: {
         "(-90)": "-90deg",
       },
       gridTemplateColumns: {
+        gridtemplatecolumns: "36rem 20rem",
         twocolumns: "1fr auto;",
+        gridarea: "1/1",
+        modalsm: "grid-template-columns: minmax(20rem, 40rem);",
       },
     },
   },
