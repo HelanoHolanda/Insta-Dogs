@@ -9,6 +9,9 @@ export default {
       width: {
         bols: "4px",
       },
+      padding: {
+        modal: "2rem calc(4rem + 15px) 2rem 4rem",
+      },
       boxShadow: {
         "4xl": "0 6px currentColor, 0 -6px currentColor",
         bols: "0 8px currentColor, 0 -8px currentColor",
@@ -36,20 +39,20 @@ export default {
         custom: "1 / 1 / span 2 / 3",
       },
       gridTemplateRows: {
-        row: " auto 1fr auto",
+        feedMD: " auto 1fr auto",
         img: "1 / 4",
       },
       maxHeight: {
-        "max-sm": "max-height: calc(100vh - 4rem);",
+        feedSm: "calc(100vh - 4rem);",
       },
       rotate: {
         "(-90)": "-90deg",
       },
       gridTemplateColumns: {
-        gridtemplatecolumns: "36rem 20rem",
+        feedMD: "36rem 20rem",
         twocolumns: "1fr auto;",
         gridarea: "1/1",
-        modalsm: "grid-template-columns: minmax(20rem, 40rem);",
+        modalsm: "20rem, 40rem",
       },
     },
   },
