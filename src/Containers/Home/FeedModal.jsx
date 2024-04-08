@@ -6,6 +6,7 @@ import PhotoContent from "../Photo/PhotoContent";
 // eslint-disable-next-line react/prop-types
 const FeedModal = ({ photo, setModal }) => {
   const [photodata, setPhotoData] = useState(null);
+
   useEffect(() => {
     async function fetchPhoto() {
       try {
@@ -27,12 +28,14 @@ const FeedModal = ({ photo, setModal }) => {
   }
 
   return (
-    <div
-      onClick={handleOutsideClick}
-      className="fixed top-0 left-0 z-50 flex py-8 px-8  w-screen h-screen bg-bg-span rounded md:py-8 md:px-16"
-    >
-      {photodata && <PhotoContent photodata={photodata} />}
-    </div>
+    <>
+      <div
+        onClick={handleOutsideClick}
+        className="fixed top-0 left-0 z-50 flex py-8 px-8  w-screen h-screen bg-bg-span rounded md:py-8 md:px-16"
+      >
+        {photodata && <PhotoContent photodata={photodata} />}
+      </div>
+    </>
   );
 };
 

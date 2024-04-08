@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import FeedPhotoItens from "./FeedPhotoItens";
 import apiDogs from "../../Services/Api";
 import PropTypes from "prop-types";
-
+import Loading from "../../Components/Loading";
 // eslint-disable-next-line react/prop-types
 const FeedPhotos = ({ setModal }) => {
   const [feed, setFeed] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPhotos({ page, total, user }) {
@@ -14,6 +15,7 @@ const FeedPhotos = ({ setModal }) => {
       );
 
       setFeed(response.data);
+      setIsLoading(false);
     }
     setTimeout(
       () => {
@@ -25,11 +27,14 @@ const FeedPhotos = ({ setModal }) => {
   }, []);
 
   return (
-    <ul className="grid grid-cols-2 gap-4 mb-4">
-      {feed.map((photo) => (
-        <FeedPhotoItens key={photo.id} photo={photo} setModal={setModal} />
-      ))}
-    </ul>
+    <>
+      {isLoading && <Loading />}
+      <ul className="grid grid-cols-2 gap-4 mb-4">
+        {feed.map((photo) => (
+          <FeedPhotoItens key={photo.id} photo={photo} setModal={setModal} />
+        ))}
+      </ul>
+    </>
   );
 };
 
