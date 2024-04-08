@@ -15,7 +15,13 @@ const FeedPhotos = ({ setModal }) => {
 
       setFeed(response.data);
     }
-    fetchPhotos({ page: 1, total: 6, user: 0 });
+    setTimeout(
+      () => {
+        fetchPhotos({ page: 1, total: 6, user: 0 });
+      },
+
+      1000
+    );
   }, []);
 
   return (

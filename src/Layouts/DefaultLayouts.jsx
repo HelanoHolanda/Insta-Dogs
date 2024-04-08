@@ -1,15 +1,14 @@
-import React from 'react'
-import Header from '../Components/Header'
-import { Outlet } from 'react-router-dom'
-import Footer from '../Components/Footer'
+import React from "react";
+import Header from "../Components/Header";
+import { Outlet } from "react-router-dom";
+import Footer from "../Components/Footer";
 const DefaultLayouts = () => {
   return (
     <div>
-        <Header />
-        <Outlet />
-        <Footer />
+      <Header />
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default DefaultLayouts
+export default DefaultLayouts;

@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import PhotoComments from "./PhotoComments";
+import { useUser } from "../../hooks/UserContext";
+import PhotoDelete from "./PhotoDelete";
 
 // eslint-disable-next-line react/prop-types
 const PhotoContent = ({ photodata }) => {
+  const { user } = useUser();
+  console.log(user);
   const { photo, comments } = photodata;
   return (
     <div className="m-auto h-auto max-h-feedSm  grid grid-cols-1 overflow-y-auto rounded bg-white overflow-hidden md:grid md:grid-cols-feedMD grid-rows-feedMD md:h-[36rem]">
@@ -13,7 +17,12 @@ const PhotoContent = ({ photodata }) => {
       <div className="px-8 pt-8">
         <div>
           <p className="opacity-1 mb-4 flex justify-between items-center hover:underline ">
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            {user.user_nicename === photo.author ? (
+              <PhotoDelete id={photo.id} />
+            ) : (
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            )}
+
             <span className="before:w-4 before:h-2.5 before:inline-block before:mr-1 before:bg-viewBlack">
               {photo.acessos}
             </span>
