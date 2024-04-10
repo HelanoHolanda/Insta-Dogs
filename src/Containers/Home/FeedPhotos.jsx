@@ -14,7 +14,7 @@ const FeedPhotos = ({ setModal, user }) => {
       const response = await apiDogs.get(
         `/api/photo/?_page=${page}&_total=${total}&_user=${user}`
       );
-      console.log(response.data);
+
       setFeed(response.data);
       setIsLoading(false);
     }

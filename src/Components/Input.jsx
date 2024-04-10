@@ -27,7 +27,7 @@ const Input = React.forwardRef(({ ...props }, ref) => {
         hover:shadow
         hover:shadow-yellow-300
         focus:shadow-yellow-100
-        focus:outline-none
+        
         focus:outline-none focus:yellow-200" // Spread the remaining props
     />
   );

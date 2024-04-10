@@ -77,7 +77,7 @@ const UserPhotoPost = () => {
         hover:shadow
         hover:shadow-yellow-300
         focus:shadow-yellow-100
-        focus:outline-none
+        
         focus:outline-none focus:yellow-200"
             type="text"
             value={name}

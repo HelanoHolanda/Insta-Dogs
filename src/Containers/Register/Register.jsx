@@ -38,7 +38,7 @@ const Register = () => {
         password: ClientData.password,
       });
       console.log(response);
-      navigate("/user");
+      navigate("/login");
       setload(false);
     } catch (error) {
       setError(error.response.data.message);

@@ -7,7 +7,7 @@ import PhotoDelete from "./PhotoDelete";
 // eslint-disable-next-line react/prop-types
 const PhotoContent = ({ photodata }) => {
   const { user } = useUser();
-  console.log(user);
+
   const { photo, comments } = photodata;
   return (
     <div className="m-auto h-auto max-h-feedSm  grid grid-cols-1 overflow-y-auto rounded bg-white overflow-hidden md:grid md:grid-cols-feedMD grid-rows-feedMD md:h-[36rem]">

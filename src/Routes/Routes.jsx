@@ -8,7 +8,6 @@ import LostPassword from "../Containers/LostPassword/LostPassword";
 import DefaultLayouts from "../Layouts/DefaultLayouts";
 import User from "../Containers/User/User";
 import UserPhotoPost from "../Containers/User/UserPhotoPost";
-import UserStates from "../Containers/User/UserStates";
 import ErrorFound from "../Components/ErrorFound";
 
 const Routes1 = () => {
@@ -21,7 +20,6 @@ const Routes1 = () => {
         <Route path="/lostpassword" element={<LostPassword />} />
         <Route path="/user" element={<User />}>
           <Route path="/user/postar" element={<UserPhotoPost />} />
-          <Route path="/user/estatistica" element={<UserStates />} />
         </Route>
         <Route path="*" element={<ErrorFound />} />
       </Route>
