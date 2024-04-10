@@ -9,7 +9,7 @@ import DefaultLayouts from "../Layouts/DefaultLayouts";
 import User from "../Containers/User/User";
 import UserPhotoPost from "../Containers/User/UserPhotoPost";
 import UserStates from "../Containers/User/UserStates";
-import Feed from "../Components/Feed";
+import ErrorFound from "../Components/ErrorFound";
 
 const Routes1 = () => {
   return (
@@ -20,10 +20,10 @@ const Routes1 = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/lostpassword" element={<LostPassword />} />
         <Route path="/user" element={<User />}>
-          <Route path="/user/feed" element={<Feed />} />
           <Route path="/user/postar" element={<UserPhotoPost />} />
           <Route path="/user/estatistica" element={<UserStates />} />
         </Route>
+        <Route path="*" element={<ErrorFound />} />
       </Route>
     </Routes>
   );

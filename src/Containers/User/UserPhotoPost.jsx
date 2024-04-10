@@ -4,6 +4,7 @@ import Label from "../../Components/Label";
 import Button from "../../Components/Button";
 import apiDogs from "../../Services/Api";
 import { useNavigate } from "react-router-dom";
+import Head from "../../Components/Head";
 
 const UserPhotoPost = () => {
   const [name, setName] = useState("");
@@ -41,7 +42,7 @@ const UserPhotoPost = () => {
         });
         console.log(response.data);
         setLoad(false);
-        navigate("/user/feed");
+        navigate("/user");
       } catch (error) {
         console.log("Ocorreu um erro:", error);
         setLoad(false);
@@ -52,6 +53,7 @@ const UserPhotoPost = () => {
 
   return (
     <section className="grid grid-cols-1 gap-8 mb-8 h-screen md:grid md:grid-cols-2 md:gap-8">
+      <Head title="Postar Foto" />
       <form onSubmit={uploadImg}>
         <div>
           <Label>Nome</Label>

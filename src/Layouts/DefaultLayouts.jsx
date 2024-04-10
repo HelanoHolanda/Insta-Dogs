@@ -7,6 +7,7 @@ const DefaultLayouts = () => {
     <div>
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };

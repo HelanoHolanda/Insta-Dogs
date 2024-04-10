@@ -3,8 +3,9 @@ import FeedPhotoItens from "./FeedPhotoItens";
 import apiDogs from "../../Services/Api";
 import PropTypes from "prop-types";
 import Loading from "../../Components/Loading";
+
 // eslint-disable-next-line react/prop-types
-const FeedPhotos = ({ setModal }) => {
+const FeedPhotos = ({ setModal, user }) => {
   const [feed, setFeed] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -13,16 +14,17 @@ const FeedPhotos = ({ setModal }) => {
       const response = await apiDogs.get(
         `/api/photo/?_page=${page}&_total=${total}&_user=${user}`
       );
-
+      console.log(response.data);
       setFeed(response.data);
       setIsLoading(false);
     }
     setTimeout(
       () => {
-        fetchPhotos({ page: 1, total: 6, user: 0 });
+        // eslint-disable-next-line react/prop-types
+        fetchPhotos({ page: 1, total: 6, user: user });
       },
 
-      1000
+      100
     );
   }, []);
 

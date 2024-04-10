@@ -6,6 +6,7 @@ import UseMedia from "../../hooks/UseMedia";
 
 const UserHeaderNav = () => {
   const { logout } = useUser();
+
   const mobile = UseMedia("(max-width: 40rem)");
 
   const [mobileisopen, setMobileisopen] = useState(false);
@@ -43,9 +44,10 @@ const UserHeaderNav = () => {
                    hover:text-bg-footer
                     focus:text-bg-footer
                     after:duration-200
+                    
                     ${
                       mobileisopen &&
-                      "outline-none bg-white shadow-hoverandfocus border-bg-footer text-bg-footer after:rotate-(-90) after:w-bols after:h-bols after:shadow-bols"
+                      "outline-none z-50 bg-white shadow-hoverandfocus border-bg-footer text-bg-footer after:rotate-(-90) after:w-bols after:h-bols after:shadow-bols"
                     }`}
           onClick={() => setMobileisopen(!mobileisopen)}
         ></button>
@@ -54,7 +56,7 @@ const UserHeaderNav = () => {
       <nav
         className={` ${
           mobileisopen &&
-          "duration-300 opacity-100 origin-initial pointer-events-auto "
+          "duration-300 opacity-100 origin-initial pointer-events-auto z-50 "
         } ${
           mobile
             ? "block absolute top-[65px] right-[-10px] px-4 bg-white shadow-boxmobile rounded translate-x-mobile opacity-0 pointer-events-none"
@@ -62,7 +64,7 @@ const UserHeaderNav = () => {
         }`}
       >
         <NavLink
-          to="/user/feed"
+          to="/user"
           className={` ${
             mobile
               ? "flex gap-1 items-center  bg-none w-full border-none cursor-pointer border-b-zinc-200 py-2 hover:text-bg-footer"
@@ -107,6 +109,7 @@ const UserHeaderNav = () => {
 
         <NavLink
           to="/login"
+          onClick={logout}
           className={` ${
             mobile
               ? "flex gap-1 items-center bg-none w-full border-none cursor-pointer border-b border-b-solid border-b-ee1 py-2 2 hover:text-bg-footer"
@@ -114,7 +117,7 @@ const UserHeaderNav = () => {
           } `}
         >
           <img className="inline-block" src="/src/Public/sair.svg" alt="Feed" />{" "}
-          <button onClick={logout}>{mobile && "Sair"}</button>{" "}
+          <button> {mobile && "Sair"}</button>{" "}
         </NavLink>
       </nav>
     </>

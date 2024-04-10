@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Logo from "../Public/Logo.svg";
 import { Link } from "react-router-dom";
 import { useUser } from "../hooks/UserContext";
 
 const Header = () => {
-  const { user } = useUser();
+  const { data } = useUser();
 
   return (
     <div className="w-full bg-white border-b-2 shadow-sm block">
@@ -15,9 +15,9 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-2">
-          {user ? (
+          {data ? (
             <Link className="flex gap-2" to="/user">
-              <p className="font-sans"> {user.user_nicename} </p>
+              <p className="font-sans"> {data.nome} </p>
               <img
                 src="https://dogs.origamid.dev/assets/usuario-106ce8c2.svg"
                 alt=""
