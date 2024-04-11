@@ -1,5 +1,5 @@
 <h1 align="center">InstaDogs</h1>
 
 <div align="center">
-    <img src="https://github.com/HelanoHolanda/Insta-Dogs/blob/master/src/Public/New%20Website%20Blue%20Mockup%20Instagram%20-%20Laptop.png?raw=true" width="500" height="500" /> <img <img src="https://github.com/HelanoHolanda/Insta-Dogs/blob/master/src/Public/New%20Website%20Blue%20Mockup%20Instagram%20-%20Laptop.png?raw=true" width="500" height="500" /> <img 
+    <img src="https://s4.aconvert.com/convert/p3r68-cdx67/acca7-ix9vb.svg" alt="Minha Figura"  > <img src="https://s4.aconvert.com/convert/p3r68-cdx67/a0ad4-0h08t.svg" alt="Minha Figura">
 </div>
