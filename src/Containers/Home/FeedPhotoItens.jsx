@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-const FeedPhotoItens = ({ photo, setModal }) => {
+const FeedPhotoItens = ({ photo, setModal, index }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -23,7 +23,12 @@ const FeedPhotoItens = ({ photo, setModal }) => {
   }
 
   return (
-    <li className="relative" onClick={handleClick}>
+    <li
+      className={`relative ${
+        index === 1 ? "md:col-span-2 md:row-span-2" : ""
+      } ${index === 7 ? "md:col-span-2 md:row-span-2" : ""}`} //"relative md:even:col-span-2 md:even:row-span-2 last:col-start-3 last:row-span-1 "
+      onClick={handleClick}
+    >
       <div className="relative">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center w-full h-full bg-gradient-to-r from-white  to-gray-300 bg-auto animate-pulse">

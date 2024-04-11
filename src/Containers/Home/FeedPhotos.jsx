@@ -21,7 +21,7 @@ const FeedPhotos = ({ setModal, user }) => {
     setTimeout(
       () => {
         // eslint-disable-next-line react/prop-types
-        fetchPhotos({ page: 1, total: 6, user: user });
+        fetchPhotos({ page: 1, total: 9, user: user });
       },
 
       100
@@ -31,9 +31,14 @@ const FeedPhotos = ({ setModal, user }) => {
   return (
     <>
       {isLoading && <Loading />}
-      <ul className="grid grid-cols-2 gap-4 mb-4">
-        {feed.map((photo) => (
-          <FeedPhotoItens key={photo.id} photo={photo} setModal={setModal} />
+      <ul className="grid grid-cols-2 gap-4 mb-4 md:grid md:grid-cols-3">
+        {feed.map((photo, index) => (
+          <FeedPhotoItens
+            key={photo.id}
+            photo={photo}
+            setModal={setModal}
+            index={index}
+          />
         ))}
       </ul>
     </>
