@@ -1,8 +1,5 @@
-# React + Vite
+<h1 align="center">InstaDogs</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<div align="center">
+    <img src="https://s4.aconvert.com/convert/p3r68-cdx67/acca7-ix9vb.svg" alt="Minha Figura"  > <img src="https://s4.aconvert.com/convert/p3r68-cdx67/a0ad4-0h08t.svg" alt="Minha Figura">
+</div>
