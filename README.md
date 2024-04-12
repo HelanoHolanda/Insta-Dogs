@@ -1,7 +1,8 @@
 <h1 align="center">InstaDogs</h1>
 
 <div align="center">
- 
+  <img src="https://github.com/HelanoHolanda/Insta-Dogs/blob/master/src/Public/Design%20sem%20nome.png?raw=true" alt="Minha Figura"  height="400px" width="400px" >
+ <img src="https://github.com/HelanoHolanda/Insta-Dogs/blob/master/src/Public/mobile.png?raw=true" alt="Minha Figura"   height="400px" width="300px">
 </div>
 
 <H1>💻 Sobre o Projeto: </H1>
