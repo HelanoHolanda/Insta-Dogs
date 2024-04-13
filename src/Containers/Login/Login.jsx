@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <div>
       <div className="flex-1">
-        <div className="md:grid grid-cols-2 gap-8 before:block before:bg-auth before:bg-cover before:bg-center">
+        <div className="md:grid grid-cols-2 gap-8 before:block before:bg-[url('./public/login.jpg')] before:bg-cover before:bg-center">
           <div className="max-w-md p-4 mt-48">
             <form onSubmit={handleSubmit(onSubmit)} className="mb-8">
               <div>
