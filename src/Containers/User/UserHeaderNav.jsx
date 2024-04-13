@@ -5,7 +5,7 @@ import { useUser } from "../../hooks/UserContext";
 import UseMedia from "../../hooks/UseMedia";
 import Feed from "../../public/feed.svg";
 import Logout from "../../public/sair.svg";
-import adicionarIcon from "../../public/adicionar.svg";
+
 const UserHeaderNav = () => {
   const { logout } = useUser();
 
