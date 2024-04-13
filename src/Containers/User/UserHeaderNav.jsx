@@ -85,7 +85,7 @@ const UserHeaderNav = () => {
               : "bg-slate-200 rounded-md h-10 w-10 flex items-center justify-center border border-transparent border-solid duration-100 cursor-pointer focus:bg-white focus:shadow-md  focus:shadow-gray-400 focus:border-zinc-800 focus:outline-none hover:bg-white hover:shadow-md hover:shadow-gray-4 hover:border-zinc-800 hover:outline-none  active:bg-white  active:shadow active:shadow-yellow-200  active:border-yellow-500"
           } `}
         >
-          <img className="inline-block" src={adicionarIcon} alt="Feed" />
+          <img className="inline-block" src="" alt="Feed" />
           {mobile && "Postar Foto"}
         </NavLink>
 
