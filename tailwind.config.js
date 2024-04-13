@@ -31,7 +31,7 @@ export default {
         "bg-span": "rgba(0,0,0,.3)",
       },
       backgroundImage: {
-        auth: "url('./src./public/login.jpg')",
+        auth: "url('./public/login.jpg')",
         view: "url('./src./public/visualizacao.svg')",
         viewBlack: "url('/src/public/visualizacao-black.svg')",
       },
