@@ -31,9 +31,9 @@ export default {
         "bg-span": "rgba(0,0,0,.3)",
       },
       backgroundImage: {
-        auth: "url('./public/login.jpg')",
-        view: "url('./src./public/visualizacao.svg')",
-        viewBlack: "url('/src/public/visualizacao-black.svg')",
+        auth: "url('/src/Public/login.jpg')",
+        view: "url('/src/Public/visualizacao.svg')",
+        viewBlack: "url('/src/Public/visualizacao-black.svg')",
       },
       gridArea: {
         custom: "1 / 1 / span 2 / 3",
